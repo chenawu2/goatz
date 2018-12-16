@@ -29,15 +29,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-BP-l16">
-                                                    <rect key="frame" x="15" y="10" width="33" height="33"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-BP-l16">
+                                                    <rect key="frame" x="15" y="10" width="40" height="59.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="Ofq-1W-ezG"/>
-                                                        <constraint firstAttribute="width" constant="33" id="Pft-dF-hTx"/>
+                                                        <constraint firstAttribute="width" constant="40" id="yUS-AG-4zA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon H:80 L:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hot-TS-QIT">
-                                                    <rect key="frame" x="63" y="0.0" width="297" height="53"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon H:80 L:59" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hot-TS-QIT">
+                                                    <rect key="frame" x="70" y="0.0" width="290" height="79.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -46,12 +45,11 @@
                                             <constraints>
                                                 <constraint firstItem="gRt-BP-l16" firstAttribute="leading" secondItem="ANy-wF-mKo" secondAttribute="leading" constant="15" id="42v-HY-WmY"/>
                                                 <constraint firstAttribute="trailing" secondItem="hot-TS-QIT" secondAttribute="trailing" constant="15" id="5iZ-Zb-eA2"/>
+                                                <constraint firstAttribute="bottom" secondItem="gRt-BP-l16" secondAttribute="bottom" constant="10" id="6jK-Ik-p3j"/>
                                                 <constraint firstItem="hot-TS-QIT" firstAttribute="leading" secondItem="gRt-BP-l16" secondAttribute="trailing" constant="15" id="77i-yE-2QY"/>
-                                                <constraint firstItem="gRt-BP-l16" firstAttribute="centerY" secondItem="ANy-wF-mKo" secondAttribute="centerY" id="HO4-qO-pAZ"/>
-                                                <constraint firstItem="gRt-BP-l16" firstAttribute="top" secondItem="ANy-wF-mKo" secondAttribute="top" constant="10" id="IWG-BH-qdo"/>
-                                                <constraint firstItem="hot-TS-QIT" firstAttribute="top" secondItem="ANy-wF-mKo" secondAttribute="top" id="PLG-Et-H0L"/>
-                                                <constraint firstAttribute="bottom" secondItem="gRt-BP-l16" secondAttribute="bottom" constant="10" id="qiN-c4-u0B"/>
-                                                <constraint firstAttribute="bottom" secondItem="hot-TS-QIT" secondAttribute="bottom" id="zk6-OM-UG7"/>
+                                                <constraint firstItem="gRt-BP-l16" firstAttribute="top" secondItem="ANy-wF-mKo" secondAttribute="top" constant="10" id="LOR-ip-Yqm"/>
+                                                <constraint firstItem="hot-TS-QIT" firstAttribute="top" secondItem="ANy-wF-mKo" secondAttribute="top" id="d70-iB-vhD"/>
+                                                <constraint firstAttribute="bottom" secondItem="hot-TS-QIT" secondAttribute="bottom" id="vqm-E7-vvn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -146,4 +144,7 @@
             <point key="canvasLocation" x="308" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloudy" width="58" height="50"/>
+    </resources>
 </document>

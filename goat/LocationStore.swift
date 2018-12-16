@@ -22,21 +22,16 @@ class LocationStore: NSObject {
     }()
     
     @objc dynamic var location: CLLocation?
-
-    var callBack: LocationRequestResponseCallback?
     
-    typealias LocationRequestResponseCallback = (LocationRequestResponse) -> Void
-    func requestUserPermission(completionHandler: @escaping LocationRequestResponseCallback) {
+    func requestUserPermission() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
              fallthrough
         case .authorizedWhenInUse:
             self.locationManager.requestLocation()
-            completionHandler(.success)
         case .restricted, .denied:
-            completionHandler(.failure)
+            break
         case .notDetermined:
-            self.callBack = completionHandler
             self.locationManager.requestWhenInUseAuthorization()
         }
     }
@@ -45,18 +40,12 @@ class LocationStore: NSObject {
 extension LocationStore: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
-            self.callBack?(.success)
-        default:
-            self.callBack?(.failure)
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            self.locationManager.requestLocation()
         }
-        self.callBack = nil
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {}
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {

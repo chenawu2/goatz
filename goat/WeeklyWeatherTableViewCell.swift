@@ -17,7 +17,7 @@ final class WeeklyWeatherTableViewCell: UITableViewCell {
     
     private lazy var formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEEEEE"
+        formatter.dateFormat = "EEEEEEE"
         return formatter
     }()
     

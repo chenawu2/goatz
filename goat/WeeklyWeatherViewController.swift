@@ -46,14 +46,7 @@ final class WeeklyWeatherViewController: UIViewController {
     
     @IBAction func askUserForPermission(_ sender: Any) {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
-        self.locationStore?.requestUserPermission(completionHandler: { (response) in
-            switch response {
-            case .success:
-                self.activityIndicatorView.startAnimating()
-            case .failure:
-                self.presentFailureAlert()
-            }
-        })
+        self.locationStore?.requestUserPermission()
     }
     
     private func presentFailureAlert() {
