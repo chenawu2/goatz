@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        guard let navigationController = window?.rootViewController as? UINavigationController,
+            let weeklyWeatherVC = navigationController.topViewController as? WeeklyWeatherViewController else {
+                assertionFailure()
+                return true
+        }
+        weeklyWeatherVC.locationStore = LocationStore()
+        weeklyWeatherVC.weatherStore = WeatherStore()
         return true
     }
 
